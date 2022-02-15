@@ -4,8 +4,12 @@ function Banner(){
 
     return (
         <div className="banner">
-            <h1>Coastguard Done Easy</h1>
-            <img src={anchorWithWings} />
+            <img src="anchor.jpg"/>
+            <div className= "middle">
+                <h1>Coastguard Done Easy</h1>
+                <img src={anchorWithWings} />
+            </div>
+            <img src="anchor.jpg" />
         </div>
     )
 }

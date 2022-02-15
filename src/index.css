@@ -1,10 +1,51 @@
 * {
-    margin: 0;
+    margin: auto;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: system-ui;
 }
 
 .banner {
-    background-color: rgb(3, 19, 61);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5% 3% .5% 3%;
+    background-image: linear-gradient(black, rgb(95, 81, 0));
     color: white;
+}
+
+.banner img {
+    width: 15%;
+    height: auto;
+    border-radius: 20%;
+}
+
+.banner .middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.banner .middle img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.reason-container {
+    margin: 10%;
+    padding: 5%;
+    width: 80%;
+    height: auto;
+    border-radius: 10%;
+    background-color: whitesmoke;
+}
+
+.reason {
+    display: flex;
 }
