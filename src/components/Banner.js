@@ -6,7 +6,7 @@ function Banner(){
             <div className= "banner">
                 <h1>Coastguard Done Easy</h1>
                 <img src={anchorWithWings} />
-                <h2>Ride Tides to Save Lives</h2>
+                <h2>Riding Tides to Save Lives</h2>
             </div>
     )
 }

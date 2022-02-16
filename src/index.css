@@ -11,7 +11,7 @@
   text-align: center;
   font-size: 2vw;
   padding: 1vw;
-  background-image: linear-gradient(black, rgb(95, 81, 0));
+  background-image: linear-gradient(black, rgb(175, 149, 0));
   color: white;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .reason-container:hover {
-  box-shadow: 0 0 0.69rem rgb(95, 81, 0);
+  box-shadow: 0 0 0.69rem rgb(175, 149, 0);
 }
 
 .reason-container img {
