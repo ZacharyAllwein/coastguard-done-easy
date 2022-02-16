@@ -6,28 +6,17 @@
 
 .banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  font-size: 2vw;
   padding: 1vw;
   background-image: linear-gradient(black, rgb(95, 81, 0));
   color: white;
 }
 
 .banner img {
-  width: 15vw;
-  height: auto;
-  border-radius: 3rem;
-}
-
-.banner .middle {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 2vw;
-}
-
-.banner .middle img {
-  width: 100%;
+  width: 50vw;
   height: auto;
   border-radius: 0;
 }
@@ -44,22 +33,31 @@
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
-  max-width: 30vw;
-  max-height: 30vw;
+  width: 35vw;
+  height: 10vw;
   padding: 3rem;
   border-radius: 3rem;
+  font-size: 1vw;
   background-color: whitesmoke;
 }
 
 .reason-container:hover {
-  box-shadow: 0 0 0.5rem rgb(95, 81, 0);
+  box-shadow: 0 0 0.69rem rgb(95, 81, 0);
 }
 
 .reason-container img {
-  height: 10rem;
-  width: 10rem;
+  height: 10vw;
+  width: 10vw;
 }
 
 .reason-container p {
   margin-left: 1rem;
+}
+
+/*smaller screens not mobile */
+@media only screen and (max-width: 1660px) {
+  .reasons-grid {
+    grid-template-columns: auto;
+    justify-items: center;
+  }
 }
