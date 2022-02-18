@@ -55,19 +55,22 @@
 }
 
 .reason-big {
+  all: initial;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(8%, 5%);
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 5vw;
+
   width: 80vw;
-  height: 80vw;
+  height: 40vw;
   padding: 3rem;
   border-radius: 3rem;
-  font-size: 1vw;
   background-color: whitesmoke;
+  font-size: 1vw;
 }
 
 .reason-big img {

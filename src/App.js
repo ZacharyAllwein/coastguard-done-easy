@@ -24,11 +24,12 @@ function App() {
       activeReason = null;
     }
     
+    
   }
   return (
-    <>
+    <div onClick={(e) => handleClick(e)}>
       <Banner />
-      <div className="reasons-grid" onClick={(e) => handleClick(e)}>
+      <div className="reasons-grid">
         <Reason
           image="anchor.jpg"
           text="Lorum Ipsum Dolor I don't know waht to put here this is an experiment, wulllllll. HOw are you doing today"
@@ -45,7 +46,7 @@ function App() {
         <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
         <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
       </div>
-    </>
+    </div>
   );
 }
 
