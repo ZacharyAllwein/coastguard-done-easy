@@ -4,6 +4,12 @@
   font-family: system-ui;
 }
 
+.blur {
+  position: relative;
+  z-index: 0;
+  filter: blur(10px);
+}
+
 .banner {
   display: flex;
   flex-direction: column;
@@ -55,10 +61,10 @@
 }
 
 .reason-big {
-  filter: blur(0);
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
