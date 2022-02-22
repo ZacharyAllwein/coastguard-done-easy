@@ -1,5 +1,6 @@
 import Banner from "./components/Banner.js";
 import Reason from "./components/Reason.js";
+import jobs from "./data/jobs.js"
 import { useRef } from "react";
 
 let reasonActive = false;
@@ -11,11 +12,18 @@ function App() {
     let element = e.target;
     let pH = placeholder.current;
 
-    if (
-      element.parentNode.classList.contains("reason") ||
-      element.parentNode.classList.contains("reason-big")
-    )
-      element = element.parentNode;
+    if(!element.classList.contains("reason")){
+
+      while(element.parentNode){
+        element = element.parentNode
+        if(element.classList.contains("reason") || element.classList.contains("reason-big")){
+          break
+        }
+        else if(element.classList.contains("root")){
+          break;
+        }
+      }
+    }
 
     if (!reasonActive) {
       if (element.classList.contains("reason")) {
@@ -36,26 +44,18 @@ function App() {
     }
   }
   return (
-    <div>
+    <div className="root">
       <div ref={placeholder} />
       <div ref={main} onClick={(e) => handleClick(e)}>
         <Banner />
+        <p className="blog">
+          Everybody can find a place in the coastguard. No matter your interests, or what you want to do. We have a job for you.
+          Joining the coastguard will bring you amazing opputunities and lead you to a life you didn't know you could have. Join Today!
+        </p>
         <div className="reasons-grid">
-          <Reason
-            image="anchor.jpg"
-            text="Lorum Ipsum Dolor I don't know waht to put here this is an experiment, wulllllll. HOw are you doing today"
-          />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
-          <Reason image="anchor.jpg" text="Lorum Ipsum Dolor" />
+          {Object.keys(jobs).map((title, index) => {
+            return <Reason image={jobs[title].primaryImage} title={title} text="Lorum Ipsum Dolor" key={index} />
+          })}
         </div>
       </div>
     </div>
