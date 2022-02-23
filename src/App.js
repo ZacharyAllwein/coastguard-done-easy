@@ -1,16 +1,19 @@
 import Banner from "./components/Banner.js";
 import Reason from "./components/Reason.js";
+import ReasonBig from "./components/ReasonBig.js"
 import jobs from "./data/jobs.js";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-let reasonActive = false;
+// let reasonActive = false;
 function App() {
-  let placeholder = useRef(null);
+  // let placeholder = useRef(null);
   let main = useRef(null);
+
+  const [reasonBigStates, setReasonBigStates] = useState[{title: null, primaryImage: null, text: null, secondaryImages: null}]
 
   function handleClick(e) {
     let element = e.target;
-    let pH = placeholder.current;
+    // let pH = placeholder.current;
 
     if (!element.classList.contains("reason")) {
       while (element.parentNode) {
@@ -26,27 +29,33 @@ function App() {
       }
     }
 
-    if (!reasonActive) {
+    if (!reasonBigStates) {
       if (element.classList.contains("reason")) {
-        pH.innerHTML = element.innerHTML;
+        // pH.innerHTML = element.innerHTML;
+        // pH.classList.add("reason-big");
 
-        pH.classList.add("reason-big");
+        const job = element.id;
+
+        setReasonBigStates({title: job, primaryImage: jobs[job].primaryImage, text: jobs[job].text})
+
         main.current.classList.add("blur");
 
-        reasonActive = true;
+        // reasonActive = true;
       }
-    } else if (reasonActive && !element.classList.contains("reason-big")) {
-      pH.innerHTML = "<div />";
+    } else if (reasonBigStates && !element.classList.contains("reason-big")) {
+      // pH.innerHTML = "<div />";
 
-      pH.classList.remove("reason-big");
+      // pH.classList.remove("reason-big");
       main.current.classList.remove("blur");
+      setReasonBigStates({title: null, primaryImage: null, text: null, secondaryImages: null})
 
-      reasonActive = false;
+      // reasonActive = false;
     }
   }
+  
   return (
     <div className="root">
-      <div ref={placeholder} />
+      {<ReasonBig title={reasonBigStates.title} primaryImage={reasonBigStates.image} text={reasonBigStates.text} />}
       <div ref={main} onClick={(e) => handleClick(e)}>
         <Banner />
         <p className="blog">
