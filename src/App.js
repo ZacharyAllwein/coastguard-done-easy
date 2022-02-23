@@ -9,7 +9,7 @@ function App() {
   // let placeholder = useRef(null);
   let main = useRef(null);
 
-  const [reasonBigStates, setReasonBigStates] = useState[{title: null, primaryImage: null, text: null, secondaryImages: null}]
+  const [reasonBigStates, setReasonBigStates] = useState(null)
 
   function handleClick(e) {
     let element = e.target;
@@ -47,7 +47,7 @@ function App() {
 
       // pH.classList.remove("reason-big");
       main.current.classList.remove("blur");
-      setReasonBigStates({title: null, primaryImage: null, text: null, secondaryImages: null})
+      setReasonBigStates(null)
 
       // reasonActive = false;
     }
@@ -55,7 +55,7 @@ function App() {
   
   return (
     <div className="root">
-      {<ReasonBig title={reasonBigStates.title} primaryImage={reasonBigStates.image} text={reasonBigStates.text} />}
+      {reasonBigStates && <ReasonBig title={reasonBigStates.title} primaryImage={reasonBigStates.primaryImage} text={reasonBigStates.text} />}
       <div ref={main} onClick={(e) => handleClick(e)}>
         <Banner />
         <p className="blog">
