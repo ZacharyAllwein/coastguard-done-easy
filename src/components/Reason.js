@@ -1,9 +1,9 @@
-function Reason({ image, text, title }) {
+function Reason({ title, image, text }) {
   return (
     <div className="reason" id={title}>
       <h1>{title}</h1>
       <div className="body">
-        <img src={image} alt={title} width="10vw" height="auto" />
+        <img src={image} alt={title} />
         <p>{text}</p>
       </div>
     </div>

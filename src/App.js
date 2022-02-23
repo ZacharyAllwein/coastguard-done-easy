@@ -4,16 +4,13 @@ import ReasonBig from "./components/ReasonBig.js"
 import jobs from "./data/jobs.js";
 import { useRef, useState } from "react";
 
-// let reasonActive = false;
 function App() {
-  // let placeholder = useRef(null);
   let main = useRef(null);
 
   const [reasonBigStates, setReasonBigStates] = useState(null)
 
   function handleClick(e) {
     let element = e.target;
-    // let pH = placeholder.current;
 
     if (!element.classList.contains("reason")) {
       while (element.parentNode) {
@@ -31,8 +28,6 @@ function App() {
 
     if (!reasonBigStates) {
       if (element.classList.contains("reason")) {
-        // pH.innerHTML = element.innerHTML;
-        // pH.classList.add("reason-big");
 
         const job = element.id;
 
@@ -43,13 +38,10 @@ function App() {
         // reasonActive = true;
       }
     } else if (reasonBigStates && !element.classList.contains("reason-big")) {
-      // pH.innerHTML = "<div />";
 
-      // pH.classList.remove("reason-big");
       main.current.classList.remove("blur");
       setReasonBigStates(null)
 
-      // reasonActive = false;
     }
   }
   
@@ -68,8 +60,8 @@ function App() {
           {Object.keys(jobs).map((title, index) => {
             return (
               <Reason
-                image={jobs[title].primaryImage}
                 title={title}
+                image={jobs[title].primaryImage}
                 text={jobs["Aviation Maintenance Technician"].text}
                 key={index}
               />
