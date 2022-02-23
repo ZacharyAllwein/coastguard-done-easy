@@ -49,6 +49,7 @@
   height: 10vw;
   padding: 1rem 3rem 4rem 3rem;
   border-radius: 3rem;
+  overflow: hidden;
   font-size: 1vw;
   background-color: whitesmoke;
 }
@@ -57,17 +58,19 @@
   display: flex;
 }
 
+.reason .body img {
+  height: 10vw;
+  width: 10vw;
+  object-fit: contain;
+  object-position: top;
+}
+
+.reason .body p {
+  margin-left: 1rem;
+}
+
 .reason:hover {
   box-shadow: 0 0 0.69rem rgb(175, 149, 0);
-}
-
-.reason img {
-  max-height: 10vw;
-  width: 10vw;
-}
-
-.reason p {
-  margin-left: 1rem;
 }
 
 .reason-big {
