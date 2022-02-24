@@ -50,7 +50,7 @@ function App() {
           text={reasonBigStates.text}
         />
       )}
-      <div ref={main} onClick={(e) => handleClick(e)}>
+      <div ref={main} className="main" onClick={(e) => handleClick(e)}>
         <Banner />
         <p className="blog">
           Everybody can find a place in the coastguard. No matter your
