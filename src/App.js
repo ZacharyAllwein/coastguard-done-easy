@@ -26,11 +26,10 @@ function App() {
     if (!reasonBigStates) {
       if (element.classList.contains("reason")) {
         const job = element.id;
-        console.log(element.id);
 
         setReasonBigStates({
           title: job,
-          primaryImage: jobs[job].primaryImage,
+          imageStart: jobs[job].imageStart,
           text: jobs[job].text,
         });
 
@@ -47,7 +46,7 @@ function App() {
       {reasonBigStates && (
         <ReasonBig
           title={reasonBigStates.title}
-          primaryImage={reasonBigStates.primaryImage}
+          imageStart={reasonBigStates.imageStart}
           text={reasonBigStates.text}
         />
       )}
@@ -56,7 +55,7 @@ function App() {
         <p className="blog">
           Everybody can find a place in the coastguard. No matter your
           interests, or what you want to do. We have a job for you. Joining the
-          coastguard will bring you amazing opputunities and lead you to a life
+          coastguard will bring you amazing opportunities and lead you to a life
           you didn't know you could have. Join Today!
         </p>
         <div className="reasons-grid">
@@ -64,7 +63,7 @@ function App() {
             return (
               <Reason
                 title={title}
-                image={jobs[title].primaryImage}
+                image={jobs[title].imageStart.replace("?", "1")}
                 text={jobs[title].blurb}
                 key={index}
               />
