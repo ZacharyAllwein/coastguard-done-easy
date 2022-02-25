@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: system-ui;;
+  font-family: system-ui;
 }
 
 .blur {
@@ -113,6 +113,14 @@
   object-fit: contain;
   object-position: top;
   max-width: 30vw;
+}
+
+.rick-roll {
+  display: block;
+  text-align: center;
+  margin-bottom: 4vw;
+  font-size: 2vw;
+  color: rgb(175, 149, 0);
 }
 
 /*smaller screens not mobile */

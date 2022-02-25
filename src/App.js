@@ -71,6 +71,12 @@ function App() {
           })}
         </div>
       </div>
+      <a
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        className="rick-roll"
+      >
+        Interested in joining? Take this Coast Guard aptitude test!
+      </a>
     </div>
   );
 }
