@@ -4,7 +4,7 @@ function Banner() {
   return (
     <div className="banner">
       <h1>Coastguard Done Easy</h1>
-      <img src={anchorWithWings} />
+      <img src={anchorWithWings} alt="anchorWithWings" />
       <h2>Riding Tides to Save Lives</h2>
     </div>
   );
